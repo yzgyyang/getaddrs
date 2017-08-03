@@ -88,8 +88,8 @@ print_addrs(void)
 	void *mmap4m = mmap(NULL, 4 * 1024 * 1024, PROT_READ | PROT_WRITE,
 	    MAP_ANON, -1, 0);
 
-	printf(HEX_FMT ", " HEX_FMT ", " HEX_FMT ", " HEX_FMT ", " HEX_FMT ", "
-	    HEX_FMT ", " HEX_FMT ", " HEX_FMT ", " HEX_FMT "\n",
+	printf("[" HEX_FMT ", " HEX_FMT ", " HEX_FMT ", " HEX_FMT ", " HEX_FMT ", "
+	    HEX_FMT ", " HEX_FMT ", " HEX_FMT ", " HEX_FMT ",],\n",
 	    (unsigned long long)&main_data,
 	    (unsigned long long)malloc4k,
 	    (unsigned long long)malloc4m,
@@ -136,6 +136,6 @@ main(int argc, char *argv[])
 		exit(0);
 	}
 
-	header();
+	/* header(); */
 	forkloop(atoi(argv[1]), argv[0]);
 }
